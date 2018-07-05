@@ -4,12 +4,10 @@ import App from './containers/App';
 
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
+import reducer from './reducers';
 
-import {Router, Route, } from 'react-router'
 
-const store = createStore((state = {})=>{
-  return state;
-})
+const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>

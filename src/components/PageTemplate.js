@@ -5,7 +5,7 @@ const PageTemplate = ({children})=>{
   return (
     <div className="page">
       <NavBar/>
-      {children};
+      {children}
     </div>
   );
 }

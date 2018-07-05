@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import Login from "./../components/pages/Login";
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+
 import Main from "./../components/pages/Main";
 import News from "./../components/pages/News";
 import Profile from "./../components/pages/Profile";
+import Login from './Login';
+
+import {connect} from 'react-redux';
+
+const mapStateToProps = (state, ownProps)=>{
+  return state;
+}
 
 class App extends Component {
+  constructor(props){
+    super(props);
+  }
+
   render() {
+    const loggined = this.props.loggined;
     return (
       <div >
         <BrowserRouter>
@@ -14,7 +26,13 @@ class App extends Component {
             <Route exact path="/" component={Main}/>
             <Route path="/login" component={Login}/>
             <Route path="/news" component={News}/>
-            <Route path="/profile" component={Profile}/>
+            <Route path="/profile" render={()=>{
+              if(!loggined){
+                return <Redirect to="/login"/>
+              } else {
+                return <Profile/>
+              }
+            }}/>
           </Switch>
         </BrowserRouter>
         There be a content 
@@ -23,4 +41,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps, null)(App);
