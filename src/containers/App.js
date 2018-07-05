@@ -27,11 +27,7 @@ class App extends Component {
             <Route path="/login" component={Login}/>
             <Route path="/news" component={News}/>
             <Route path="/profile" render={()=>{
-              if(!loggined){
-                return <Redirect to="/login"/>
-              } else {
-                return <Profile/>
-              }
+              return !loggined? (<Redirect to="/login"/>) : (<Profile/>)
             }}/>
           </Switch>
         </BrowserRouter>
