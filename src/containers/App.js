@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 import AuthRoute from './../components/AuthRoute'
 import PrivateSwitch from '../components/PrivateSwitch'
@@ -18,9 +18,6 @@ const mapStateToProps = (state, ownProps)=>{
 }
 
 class App extends Component {
-  constructor(props){
-    super(props);
-  }
 
   render() {
     const loggined = this.props.loggined;
