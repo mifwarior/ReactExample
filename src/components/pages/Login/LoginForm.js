@@ -19,6 +19,7 @@ class LoginForm extends React.Component{
     return (
         <form action="#" onSubmit={submit}>
           <table>
+            <tbody>
             <tr>
               <td><label>Login:</label></td>
               <td><input ref={this.login} type="username"/></td>
@@ -27,7 +28,9 @@ class LoginForm extends React.Component{
               <td><label>Password:</label></td>
               <td><input ref={this.password} type="password"/></td>
             </tr>
+            </tbody>
           </table>
+          
           <input type="submit"/>
         </form>
     );
