@@ -4,7 +4,7 @@ import PageTemplate from '../PageTemplate';
 const News = ()=>{
   return (
     <PageTemplate>
-      News Page
+      <h1>News Page</h1>
     </PageTemplate>
   );
 }

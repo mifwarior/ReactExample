@@ -18,17 +18,17 @@ class LoginForm extends React.Component{
    const {submit} = this;
     return (
         <form action="#" onSubmit={submit}>
-          <fieldset>
-            <div>
-              <label>Login:</label>
-              <input ref={this.login} type="username"/>
-            </div>
-            <div>
-              <label>Password:</label>
-              <input ref={this.password} type="password"/>
-            </div>
-            <input type="submit"/>
-          </fieldset>
+          <table>
+            <tr>
+              <td><label>Login:</label></td>
+              <td><input ref={this.login} type="username"/></td>
+            </tr>
+            <tr>
+              <td><label>Password:</label></td>
+              <td><input ref={this.password} type="password"/></td>
+            </tr>
+          </table>
+          <input type="submit"/>
         </form>
     );
   }

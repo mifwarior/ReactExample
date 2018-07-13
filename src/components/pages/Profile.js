@@ -4,7 +4,7 @@ import PageTemplate from '../PageTemplate';
 const Profile = ()=>{
   return (
     <PageTemplate>
-      Profile Page
+      <h1>Profile Page</h1>
     </PageTemplate>
   );
 }

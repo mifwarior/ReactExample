@@ -3,12 +3,13 @@ import {Link} from 'react-router-dom';
 
 const NavBar = (props)=>{
 
+  const linkStyle = "nav-link";
   return (
-    <div>
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/news">News</Link>
-      <Link to="/profile">Profile</Link>
+    <div className="nav-bar">
+      <Link className={linkStyle} to="/">Home</Link>
+      <Link className={linkStyle} to="/login">Login</Link>
+      <Link className={linkStyle} to="/news">News</Link>
+      <Link className={linkStyle} to="/profile">Profile</Link>
     </div>
   );
 }

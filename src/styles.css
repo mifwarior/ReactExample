@@ -1,0 +1,20 @@
+.page input{
+ padding: 0;
+}
+
+.nav-bar{
+
+}
+
+.nav-link{
+  background-color: #4D926F;
+  padding: 1em;
+  margin: 0.1em;
+  border: 1px solid black;
+  border-radius: 2px;
+  display: inline-block;
+  color: white;
+}
+.nav-link :visited {
+  background-color: #4D926F;
+}

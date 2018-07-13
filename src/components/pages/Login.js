@@ -8,7 +8,7 @@ const Login = ({onSubmit, errorLogin})=>{
   const error = errorLogin?<p>Wrong login or password</p>:null;
   return (
     <PageTemplate>
-      <span>Login Page</span>
+      <h1>Login Page</h1>
       <LoginForm onSubmit={onSubmit}/>
       {error}
     </PageTemplate>

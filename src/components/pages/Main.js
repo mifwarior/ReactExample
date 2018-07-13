@@ -1,10 +1,11 @@
 import React from 'react';
 import PageTemplate from '../PageTemplate';
 
-const Main = ()=>{
+const Main = (props)=>{
+  console.log(props);
   return (
     <PageTemplate>
-      Main Page
+      <h1>Main Page</h1>
     </PageTemplate>
   );
 }

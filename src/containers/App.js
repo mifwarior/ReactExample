@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     const loggined = this.props.loggined;
     return (
-      <div >
+      <div>
         <BrowserRouter>
           <Switch>
             
@@ -37,7 +37,6 @@ class App extends Component {
 
           </Switch>
         </BrowserRouter>
-        There be a content 
       </div>
     );
   }
