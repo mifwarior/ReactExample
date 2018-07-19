@@ -6,7 +6,8 @@ const reducer = (state = {loggined:false, errorLogin:false}, action)=>{
     return {
       ...state, 
       loggined:true,
-      errorLogin:false
+      errorLogin:false,
+      profile:action.payload
     }
   }
   
@@ -22,7 +23,8 @@ const reducer = (state = {loggined:false, errorLogin:false}, action)=>{
     return {
       ...state,
       loggined:false,
-      errorLogin:false
+      errorLogin:false,
+      profile:{}
     }
   }
 

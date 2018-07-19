@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 class LoginForm extends React.Component{
   constructor(props){
@@ -6,23 +7,32 @@ class LoginForm extends React.Component{
 
     this.login = React.createRef();
     this.password = React.createRef();
-    
+ 
+
     this.submit = (ev) => {
       ev.preventDefault();
       const {onSubmit} = this.props;
-      onSubmit(this.login.current.value, this.password.current.value);
+      const login = this.login.current.value;
+      const password = this.password.current.value;
+      
+      this.password.current.value = null;
+
+      onSubmit(login, password);
+
     };
+    
   }
   
   render(){
-   const {submit} = this;
+
+    const {submit} = this;
     return (
         <form action="#" onSubmit={submit}>
           <table>
             <tbody>
             <tr>
               <td><label>Login:</label></td>
-              <td><input ref={this.login} type="username"/></td>
+              <td><input ref={this.login} type="username" /></td>
             </tr>
             <tr>
               <td><label>Password:</label></td>
@@ -35,6 +45,11 @@ class LoginForm extends React.Component{
         </form>
     );
   }
+}
+
+LoginForm.propTypes = {
+  onSubmit: propTypes.func.isRequired,
+  error: propTypes.bool
 }
 
 export default LoginForm;
