@@ -40,3 +40,33 @@ export function loginAction(login, password){
   }
   
 }
+
+export function getProfileAction(id){
+  return (dispatch)=>{
+    fetch(`https://mysterious-reef-29460.herokuapp.com/api/v1/user-info/${id}`,{
+      method:"GET",
+      headers:{
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+    })
+      .then(responce=> {
+
+        console.log(responce);
+        return responce.json();
+      })
+      .then(result =>{
+
+        dispatch({
+          type:Constants.PROFILE_SUCCESS,
+          payload:result.data
+        })
+      }).catch(err =>{
+
+        console.log(err)
+          dispatch({
+            type:Constants.PROFILE_FAILED,
+            payload:err
+          })
+      });
+  }
+}

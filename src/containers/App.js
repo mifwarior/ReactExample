@@ -6,7 +6,7 @@ import PrivateSwitch from '../components/PrivateSwitch'
 
 import Main from "./../components/pages/Main";
 import News from "./../components/pages/News";
-import Profile from "./../components/pages/Profile";
+import Profile from "./Profile";
 import PageTemplate from "./../components/PageTemplate";
 import Login from './Login';
 
@@ -15,7 +15,7 @@ import {connect} from 'react-redux';
 
 
 const mapStateToProps = (state, ownProps)=>{
-  return state;
+  return state.Login;
 }
 
 class App extends Component {
