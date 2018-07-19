@@ -1,12 +1,11 @@
 import React from 'react';
-import PageTemplate from '../PageTemplate';
 
 const Main = (props)=>{
   console.log(props);
   return (
-    <PageTemplate>
+    <React.Fragment>
       <h1>Main Page</h1>
-    </PageTemplate>
+    </React.Fragment>
   );
 }
 

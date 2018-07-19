@@ -1,11 +1,11 @@
 import React from 'react';
-import PageTemplate from '../PageTemplate';
+
 
 const Profile = ()=>{
   return (
-    <PageTemplate>
+    <React.Fragment>
       <h1>Profile Page</h1>
-    </PageTemplate>
+    </React.Fragment>
   );
 }
 

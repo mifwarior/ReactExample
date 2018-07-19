@@ -7,6 +7,7 @@ import PrivateSwitch from '../components/PrivateSwitch'
 import Main from "./../components/pages/Main";
 import News from "./../components/pages/News";
 import Profile from "./../components/pages/Profile";
+import PageTemplate from "./../components/PageTemplate";
 import Login from './Login';
 
 import {connect} from 'react-redux';
@@ -19,6 +20,9 @@ const mapStateToProps = (state, ownProps)=>{
 
 class App extends Component {
 
+  createPage(Component){
+    return ()=>{ return (<PageTemplate><Component/></PageTemplate>)}
+  }
   render() {
     const loggined = this.props.loggined;
     return (
@@ -26,13 +30,13 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             
-            <Route exact path="/" component={Main}/>
-            <Route path="/news" component={News}/>
+            <Route exact path="/" component={this.createPage(Main)} />
+            <Route path="/news" component={this.createPage(News)}/>
 
-            <AuthRoute loginned={loggined} path="/login" component={Login}/>
+            <AuthRoute loginned={loggined} path="/login" component={this.createPage(Login)}/>
 
             <PrivateSwitch access={loggined} redirect="/login">
-              <Route  path="/profile" component={Profile}/>
+              <Route  path="/profile" component={this.createPage(Profile)}/>
             </PrivateSwitch>
 
           </Switch>

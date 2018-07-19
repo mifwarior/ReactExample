@@ -1,11 +1,10 @@
 import React from 'react';
-import PageTemplate from '../PageTemplate';
 
 const News = ()=>{
   return (
-    <PageTemplate>
+    <React.Fragment>
       <h1>News Page</h1>
-    </PageTemplate>
+    </React.Fragment>
   );
 }
 

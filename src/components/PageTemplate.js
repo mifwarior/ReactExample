@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
+import propTypes from 'prop-types'
 
 const PageTemplate = ({children})=>{
   return (
@@ -8,6 +9,10 @@ const PageTemplate = ({children})=>{
       {children}
     </div>
   );
+}
+
+PageTemplate.propTypes = {
+  children: propTypes.element.isRequired
 }
 
 export default PageTemplate;
