@@ -5,7 +5,7 @@ import AuthRoute from './../components/AuthRoute'
 import PrivateSwitch from '../components/PrivateSwitch'
 
 import Main from "./../components/pages/Main";
-import News from "./../components/pages/News";
+import News from "./News";
 import Profile from "./Profile";
 import PageTemplate from "./../components/PageTemplate";
 import Login from './Login';
