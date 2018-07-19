@@ -4,13 +4,14 @@ import Profile from './../components/pages/Profile'
 import {getProfileAction} from '../actions'
 
 
-const ProfileContainer = (props)=>{
-  const {id, userId} = props;
-  if(!~userId) {
-    props.getProfile(id);
+class ProfileContainer extends React.Component {
+  componentDidMount(){
+    const {id, userId} = this.props;
+    if(id !== userId )this.props.getProfile(id);
   }
-
-  return (<Profile {...props} />)
+  render(){
+    return (<Profile {...this.props} />)
+  }
 }
 const mapStateToProps = (state, ownProps) => {
   return {
