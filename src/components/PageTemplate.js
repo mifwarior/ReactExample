@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import NavBar from './NavBar';
 import propTypes from 'prop-types'
 
-const PageTemplate = ({children})=>{
+
+const PageTemplate = ({children, Login})=>{
   return (
-    <div className="page">
-      <NavBar/>
-      {children}
-    </div>
+    <Fragment>
+      <NavBar loggined={Login.loggined}/>
+      <div className="page">
+        <div className="page-content">
+          {children}
+        </div>
+      </div>
+    </Fragment>
   );
 }
 

@@ -1,20 +1,54 @@
+body{
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+.page-content{
+ width: 960px;
+}
+
 .page input{
- padding: 0;
+  padding: 0;
 }
 
 .nav-bar{
-
+  display: flex;
+  justify-content: space-around;
+  background-color: #0380ca;
 }
+
+.nav-bar :hover {
+  background-color:  #3d93c5;
+}
+
 
 .nav-link{
-  background-color: #4D926F;
   padding: 1em;
   margin: 0.1em;
-  border: 1px solid black;
-  border-radius: 2px;
-  display: inline-block;
+  display: block;
   color: white;
+  text-decoration: none;
 }
+
 .nav-link :visited {
-  background-color: #4D926F;
+  /*background-color: #0380ca;*/
+}
+
+.login-hint{
+  display: flex;
+  color: grey;
+  flex-direction: column;
+  font-size: small;
+}
+
+.logo{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: xx-large;
+  font-variant: all-petite-caps;
+  color: white;
 }

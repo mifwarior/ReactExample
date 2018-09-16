@@ -7,7 +7,7 @@ import PrivateSwitch from '../components/PrivateSwitch'
 import Main from "./../components/pages/Main";
 import News from "./News";
 import Profile from "./Profile";
-import PageTemplate from "./../components/PageTemplate";
+import PageTemplate from "./PageTemplate";
 import Login from './Login';
 
 import {connect} from 'react-redux';

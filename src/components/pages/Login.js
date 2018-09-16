@@ -7,9 +7,14 @@ const Login = ({onSubmit, errorLogin})=>{
   const error = errorLogin?<p>Wrong login or password</p>:null;
   return (
     <React.Fragment>
-      <h1>Login Page</h1>
+      <h1>Please sign in</h1>
       <LoginForm onSubmit={onSubmit}/>
       {error}
+      <div className="login-hint">
+        <span>try:</span>
+        <span>max@test.com</span>
+        <span>12345</span>
+      </div>
     </React.Fragment>
   );
 }
