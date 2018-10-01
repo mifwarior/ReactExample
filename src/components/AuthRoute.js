@@ -10,6 +10,9 @@ class AuthRoute extends React.Component{
   render(){
     const {loginned, location, ...rest} = this.props;
     let url = "/";
+    if(location.state && location.state.from ){
+      url = location.state.from;
+    } 
 
     if(loginned && location.pathname !== url){
 

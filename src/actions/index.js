@@ -70,6 +70,11 @@ export function getProfileAction(id){
       });
   }
 }
+export function logoutAction(){
+  return {
+    type: Constants.LOGUOT
+  }
+}
 
 export function getNewsAction(){
   return (dispatch)=>{

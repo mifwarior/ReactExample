@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {HashRouter, Switch, Route, Redirect} from 'react-router-dom'
 
 import AuthRoute from './../components/AuthRoute'
 import PrivateSwitch from '../components/PrivateSwitch'
@@ -11,6 +11,7 @@ import PageTemplate from "./PageTemplate";
 import Login from './Login';
 
 import {connect} from 'react-redux';
+import { logoutAction } from '../actions';
 
 
 
@@ -24,10 +25,11 @@ class App extends Component {
     return ()=>{ return (<PageTemplate><Component/></PageTemplate>)}
   }
   render() {
-    const loggined = this.props.loggined;
+    const {loggined, dispatch} = this.props;
+    
     return (
       <div>
-        <BrowserRouter>
+        <HashRouter>
           <Switch>
             
             <Route exact path="/" component={this.createPage(Main)} />
@@ -40,7 +42,7 @@ class App extends Component {
             </PrivateSwitch>
 
           </Switch>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     );
   }
